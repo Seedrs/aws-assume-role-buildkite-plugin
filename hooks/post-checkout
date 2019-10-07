@@ -44,7 +44,7 @@ assume_role_credentials() {
       --role-session-name "aws-assume-role-buildkite-plugin-${build}" \
       --duration-seconds "$duration" \
       --query Credentials \
-      --profile ${profile}
+      --profile "${profile}"
   else
     aws sts assume-role \
       --role-arn "$role" \
