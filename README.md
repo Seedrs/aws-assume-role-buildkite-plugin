@@ -12,7 +12,7 @@ The assumed role session expires after one hour, which is the default and maximu
 steps:
   - command: bin/ci-aws-thing
     plugins:
-      - seedrs/aws-assume-role#v0.1.2:
+      - seedrs/aws-assume-role#v0.1.3:
           role: "arn:aws:iam::123456789012:role/example-role"
 ```
 
@@ -24,7 +24,17 @@ steps:
     env:
       AWS_ASSUME_ROLE_ARN: arn:aws:iam::123456789012:role/example-role
     plugins:
-      - seedrs/aws-assume-role#v0.1.2: ~
+      - seedrs/aws-assume-role#v0.1.3: ~
+```
+To select the CLI profile that will assume the role
+
+```yml
+steps:
+  - command: bin/ci-aws-thing
+    plugins:
+      - seedrs/aws-assume-role#v0.1.3:
+          role: "arn:aws:iam::123456789012:role/example-role"
+          profile: "example-profile"
 ```
 
 ## Options
